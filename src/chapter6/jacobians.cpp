@@ -18,7 +18,7 @@ int main() {
     // For f: R^n -> R^m, J is m x n
     // J_ij = df_i / dx_j
 
-    // Example: f(x, y) = [x^2 + y, xy, sin(x)]
+    // Example: f(x, y) = [x^2 + y, xy, sin(x)]^T
     // J = [2x, 1]
     //     [y,  x]
     //     [cos(x), 0]

@@ -11,6 +11,10 @@
 using namespace std;
 using namespace Eigen;
 
+Eigen::Vector3d f_example(double x, double y) {
+    return Vector3d(x*x + y, x*y, sin(x));
+}
+
 int main() {
     cout << "=== 6.2 Numerical Jacobian ===\n\n";
 
@@ -18,10 +22,6 @@ int main() {
     // J_ij = (f_i(x + eps*e_j) - f_i(x - eps*e_j)) / (2*eps)
 
     double x_val = 1.0, y_val = 2.0;
-
-    auto f_example = [](double x, double y) -> Vector3d {
-        return Vector3d(x*x + y, x*y, sin(x));
-    };
 
     // Analytical Jacobian
     Matrix<double, 3, 2> J_analytical;
