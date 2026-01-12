@@ -14,8 +14,8 @@ using namespace Eigen;
 int main() {
     cout << "=== 1.4 Vector Operations ===\n\n";
 
-    Vector3d a(1, 0, 0);
-    Vector3d b(0, 1, 0);
+    Vector3d a(1, 2, 3);
+    Vector3d b(4, 5, 6);
     Vector3d v3(1, 2, 3);
 
     // Dot product
@@ -30,14 +30,9 @@ int main() {
     double norm = v3.norm();
     cout << "Norm of (1,2,3): " << norm << "\n";
 
-    // Squared norm (faster - avoids sqrt)
-    double sq_norm = v3.squaredNorm();
-    cout << "Squared norm: " << sq_norm << "\n";
-
     // Normalize
     Vector3d normalized = v3.normalized();
     cout << "Normalized: " << normalized.transpose() << "\n";
-    cout << "Normalized norm: " << normalized.norm() << "\n";
 
     return 0;
 }

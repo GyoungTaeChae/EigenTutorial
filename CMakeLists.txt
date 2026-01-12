@@ -200,22 +200,3 @@ add_custom_target(run_chapter7
     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
     COMMENT "Running Chapter 7..."
 )
-
-# Print build instructions
-message(STATUS "")
-message(STATUS "Eigen Tutorial Build Instructions:")
-message(STATUS "  mkdir build && cd build")
-message(STATUS "  cmake ..")
-message(STATUS "  make")
-message(STATUS "")
-message(STATUS "Run individual examples:")
-message(STATUS "  ./1_declaration")
-message(STATUS "  ./2_svd")
-message(STATUS "  ./3_quaternion")
-message(STATUS "  ... etc")
-message(STATUS "")
-message(STATUS "Run all examples in a chapter:")
-message(STATUS "  make run_chapter1")
-message(STATUS "  make run_chapter2")
-message(STATUS "  ... etc")
-message(STATUS "")

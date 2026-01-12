@@ -28,17 +28,7 @@ int main() {
     // Matrix4d = Matrix<double, 4, 4>  -> Homogeneous transformations
     // MatrixXd = Matrix<double, Dynamic, Dynamic> -> Jacobians, covariances
 
-    cout << "Fixed-size types:\n";
-    cout << "  Matrix3d: 3x3 double (rotation matrices)\n";
-    cout << "  Matrix4d: 4x4 double (homogeneous transforms)\n";
-    cout << "  Vector3d: 3x1 double (points, translations)\n\n";
-
-    cout << "Dynamic-size types:\n";
-    cout << "  MatrixXd: runtime-sized double matrix\n";
-    cout << "  VectorXd: runtime-sized double vector\n\n";
-
     cout << "Matrix A size: " << A.rows() << "x" << A.cols() << "\n";
     cout << "Vector b size: " << b.size() << "\n";
-
     return 0;
 }

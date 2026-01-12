@@ -34,6 +34,7 @@ int main() {
     // Exact (from angle-axis)
     double omega_norm = small_omega.norm();
     AngleAxisd exact_aa(omega_norm, small_omega.normalized());
+    // std::cout << "Omega norm: " << omega_norm << std::endl;
     Matrix3d R_exact = exact_aa.toRotationMatrix();
 
     cout << "Small rotation vector: " << small_omega.transpose() << "\n\n";

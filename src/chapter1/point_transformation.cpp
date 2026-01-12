@@ -31,6 +31,7 @@ int main() {
 
     // Transform: p' = R * p + t
     Vector3d transformed = Rz * point + trans;
+
     cout << "Transformed point: " << transformed.transpose() << "\n";
 
     // Using homogeneous coordinates (4x4 transformation)

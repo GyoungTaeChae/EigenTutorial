@@ -25,14 +25,6 @@ int main() {
     Matrix3d ones = Matrix3d::Ones();
     cout << "Ones matrix:\n" << ones << "\n\n";
 
-    // Random matrix (values between -1 and 1)
-    Matrix3d rand_mat = Matrix3d::Random();
-    cout << "Random matrix:\n" << rand_mat << "\n\n";
-
-    // Constant matrix
-    Matrix3d const_mat = Matrix3d::Constant(3.14);
-    cout << "Constant matrix:\n" << const_mat << "\n\n";
-
     // Comma initialization
     Matrix3d m;
     m << 1, 2, 3,
@@ -42,7 +34,7 @@ int main() {
 
     // Vector initialization
     Vector3d v(1.0, 2.0, 3.0);
-    cout << "Vector: " << v.transpose() << "\n";
+    cout << "Vector: " << v.transpose() << std::endl;
 
     return 0;
 }

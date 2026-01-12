@@ -19,6 +19,8 @@ int main() {
 
     // Element-wise operations using .array()
     cout << "Original:\n" << M << "\n\n";
+    cout << "A3:\n" << A3 << "\n\n";
+    cout << "B3:\n" << B3 << "\n\n";
     cout << "Square root:\n" << M.array().sqrt() << "\n\n";
     cout << "Squared:\n" << M.array().square() << "\n\n";
     cout << "Exponential:\n" << M.array().exp() << "\n\n";
@@ -27,7 +29,7 @@ int main() {
     Matrix3d hadamard = A3.cwiseProduct(B3);
     cout << "Element-wise product:\n" << hadamard << "\n\n";
 
-    // Min, max, sum, mean
+    // Min, max, sum, mean // 전체 원소에 대한 연산
     cout << "Min: " << M.minCoeff() << "\n";
     cout << "Max: " << M.maxCoeff() << "\n";
     cout << "Sum: " << M.sum() << "\n";

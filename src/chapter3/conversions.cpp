@@ -20,9 +20,9 @@ int main() {
     AngleAxisd original(theta, Vector3d::UnitZ());
 
     // To all representations
-    Matrix3d as_matrix = original.toRotationMatrix();
-    Quaterniond as_quat(original);
-    Vector3d as_rotvec = original.angle() * original.axis();
+    Matrix3d as_matrix = original.toRotationMatrix(); // angle-axis to matrix
+    Quaterniond as_quat(original); // angle-axis to quaternion
+    Vector3d as_rotvec = original.angle() * original.axis(); // angle-axis to rotation vector
 
     cout << "Original: " << theta * 180 / M_PI << " deg around Z\n\n";
     cout << "As matrix:\n" << as_matrix << "\n\n";

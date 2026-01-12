@@ -29,7 +29,7 @@ int main() {
 
     cout << "Rotation around Z-axis (45 deg):\n" << Rz << "\n\n";
     cout << "R^T * R (should be I):\n" << Rz.transpose() * Rz << "\n\n";
+    cout << "R * R^T (should be I):\n" << Rz * Rz.transpose() << "\n\n";
     cout << "det(R) (should be 1): " << Rz.determinant() << "\n";
-
     return 0;
 }
