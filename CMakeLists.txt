@@ -4,7 +4,11 @@ project(EigenTutorial)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Eigen3 REQUIRED)
+# find_package(Eigen3 REQUIRED)
+add_library(Eigen3::Eigen INTERFACE IMPORTED)
+set_target_properties(Eigen3::Eigen PROPERTIES
+    INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_SOURCE_DIR}/thirdparty/eigen"
+)
 
 # Chapter 1: Basic Linear Algebra
 add_executable(1.1.declaration src/chapter1/1.1.declaration.cpp)
