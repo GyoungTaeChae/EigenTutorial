@@ -60,3 +60,18 @@ target_link_libraries(my_target SomeLibrary::SomeLibrary)
 | 필요한 설정 | include 경로만 | include 경로 + 라이브러리 파일 링크 |
 | 내 프로젝트 컴파일 속도 | 느림 (매번 헤더 파싱) | 빠름 (미리 컴파일됨) |
 | 대표 예시 | Eigen, nlohmann/json, spdlog | OpenCV, Ceres, g2o, PCL |
+
+## clangd에서 "use of undeclared identifier" 오류 해결
+
+thirdparty 라이브러리를 CMake에 추가해도, clangd(VSCode의 C++ 언어 서버)는 include 경로를 모른다.
+`compile_commands.json`을 생성하면 clangd가 각 파일의 컴파일 플래그(`-I` 경로 포함)를 인식하게 된다.
+
+```bash
+# 1. compile_commands.json 생성
+cmake -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+
+# 2. 프로젝트 루트에 심볼릭 링크 (clangd는 루트에서 이 파일을 찾음)
+ln -sf build/compile_commands.json compile_commands.json
+```
+
+VSCode에서 `Ctrl+Shift+P` → **"clangd: Restart language server"** 로 반영한다.
